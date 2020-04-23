@@ -1,0 +1,91 @@
+<html>
+   <head>
+      <script src = "js/jquery.min.js"></script>
+      <script src = "codemirror/lib/codemirror.js"></script> 
+      <script src = "SQLLogAnalyzer.js"></script> 
+      <script src = "js/textile.js"></script> 
+      <link rel="stylesheet" href="SQLLogAnalyzer.css">
+      <link rel="stylesheet" href="codemirror/lib/codemirror.css">
+   </head>
+   <body>
+      <div class='container'>
+		  <div class='row'>
+			 <div class='header'>
+				<h3>Siebel Log file Analyze: Applet & View Navigations, Business Service / WF invocations, Executed SQLs</h3>
+			 </div>
+		  </div>
+		  
+		  <div class='row'>	
+			 <div class='optioncol fileselect'>Select File:
+				<input type='file' accept='*' id='fileInput' />
+			 </div>
+		  </div>
+		  <div class='row'>
+			 <div class="option">
+				<h4>Select one or more check boxes below to analyze the logs</h4>
+			 </div>
+		  </div>
+		  <div class='row row-pad'>
+			   <div class='optioncol menu-float-left'>
+				  <div class="checkbox">
+					 <label>
+					 <input type="checkbox" id='SQLExecute' class="SelectCheckbox"/> SQL Execute
+					 </label>
+				  </div>
+			   </div>
+			   <div class="optioncol menu-float-left">
+				 <div class="checkbox">
+					<label>
+					<input type="checkbox" id="SQLInitialFetch" class="SelectCheckbox"/> SQL Initial Fetch
+					</label>
+				 </div>
+			   </div>
+			   <div class="optioncol menu-float-left">
+				 <div class="checkbox">
+					<label>
+					<input type="checkbox" id="SQLPrepare" class="SelectCheckbox"/> SQL Prepare 
+					</label>
+				 </div>
+			  </div>
+			  <div class="optioncol menu-float-left"><!––purav––>
+				 <div class="checkbox">
+					<label>
+					<input type="checkbox" id="SQLInsert" class="SelectCheckbox"/> SQL Insert 
+					</label>
+				 </div>
+			  </div>
+			   <div class="optioncol"><!––purav––>
+				 <div class="checkbox">
+					<label>
+					<input type="checkbox" id="SQLUpdate" class="SelectCheckbox"/> SQL Update 
+					</label>
+				 </div>
+			  </div>
+		  </div>
+		  <div class="optioncol">
+			 <div class="optioncol row row-pad SQLThreshold DisplayNone"> Enter the threshold SQL Execution time:
+				<input type="number" id="SQLExecuteTime" />
+			 </div>
+			 <div class="optioncol row row-pad SQLInitial DisplayNone"> Enter the threshold SQL Initial Fetch time:
+				<input type="number" id="SQLInitialTime" />
+			 </div>
+			 <div class="optioncol row row-pad SQLPrepare DisplayNone"> Enter the threshold SQL Prepare time:
+				<input type="number" id="SQLPrepareTime" />
+			 </div>
+		  </div>
+		  
+		  <div class='row'>
+				<div class='outputArea'>
+				   <br>
+				   <div id='output' class='output'></div>
+				</div>
+		  </div>
+		  <div class='row'>
+				<div class='outputArea'>
+				   <br>
+				   <div id='output2' class='output2 DisplayNone'></div>
+				</div>
+		  </div>
+	  </div>
+	</body>
+</html>
